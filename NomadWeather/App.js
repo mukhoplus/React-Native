@@ -4,8 +4,8 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Made By Mukho I/O</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.text}>Made By Mukho I/O</Text>
+      <StatusBar style="dark" />
     </View>
   );
 }
@@ -16,5 +16,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  text: {
+    fontSize: 28,
+    color: "black",
   },
 });
