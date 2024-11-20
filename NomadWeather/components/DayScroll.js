@@ -1,7 +1,8 @@
 import React from "react";
-import { View, ScrollView, ActivityIndicator } from "react-native";
+import { ScrollView } from "react-native";
+import LoadingCard from "./LoadingCard";
 import WeatherCard from "./WeatherCard";
-import styles from "../styles/DayScrollStyles";
+import styles from "../styles/WeatherCardStyles";
 
 const DayScroll = ({ days }) => {
   return (
@@ -12,9 +13,7 @@ const DayScroll = ({ days }) => {
       contentContainerStyle={styles.weather}
     >
       {days.length === 0 ? (
-        <View style={{ ...styles.day, alignItems: "center" }}>
-          <ActivityIndicator color="white" style={{ marginTop: 10 }} />
-        </View>
+        <LoadingCard />
       ) : (
         days.map((day, index) => <WeatherCard key={`day-${index}`} day={day} />)
       )}
