@@ -109,3 +109,46 @@
 ## 2024-11-20
 
 ### Layout System
+
+- `Flexbox`
+  - 웹과 거의 같은 방식.
+  - Container View가 이미 Flex Container이므로, 명시하지 않아도 된다.
+  - 웹에서는 flex direction의 기본 값이 row지만, Native에서는 column이다.
+  - Overflow가 있어도 스크롤 할 수 없다.
+- 대부분의 경우에서, 너비와 높이에 기반해서 레이아웃을 만들지 않을 것이다 -> 반응형 디자인
+  - 아이콘이나 아바타가 있다면 사용하겠지만, 레이아웃에서는 사용하지 않을 것이다.
+  - 숫자를 통한 flex size
+    - 자식 Flex의 비율은 윗 레벨 요소의 Flex에 대한 비율
+
+### Styles / Weater App
+
+- 위치: Location Expo Package
+- 개발 시, View에 backgroundColor 속성을 주고 하면 편하다.
+
+### Styles part Two
+
+- 위에 적혀있지만, 웹과 달리 모바일에서는 오버플로우 된 요소들에 대해 자동 스크롤이 안된다.
+- Native의 `ScrollView` 사용
+  - 기존의 style이 아닌, Container Style 사용
+  - pagingEnabled: 스크롤 시 자동 페이지네이션
+  - showsHorizontalScrollIndicator: 화면 하단에 표시되는 스크롤바 없애기
+- 1개의 day 요소만 보고 싶다.
+  - 1개의 day가 화면 너비의 크기를 가져야 한다.
+    - Native의 `Dimensions` 사용
+      `Dimensions.get("window").width`
+- Android / iOS 모두에 호환되지 않는 기능들이 있다.
+
+### Location
+
+`expo install expo-location`
+
+- 유저 권한 요청: ``
+- 유저의 현재 위치: ``
+
+### Weather
+
+- https://openweathermap.org/api
+
+### Icons
+
+- `expo install vector-icons`
