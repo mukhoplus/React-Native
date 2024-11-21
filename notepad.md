@@ -152,3 +152,41 @@
 ### Icons
 
 - `expo install vector-icons`
+
+## 2024-11-21
+
+### Introduction
+
+- React Native에서 버튼 클릭을 다루는 법
+- Text Input에서 키보드 다루는 법
+- 웹과의 Input 차이
+
+### Touchables
+
+- `TouchableOpacity`: 터치 시, 깜빡이는 애니메이션
+- `TouchableHighlight`: 터치 시, 요소의 배경색을 바꾸도록 함
+- `TouchableWithoutFeedback`: 화면의 가장 위에서 일어나는 탭 이벤트를 listen하지만, 어떤 그래픽이나 UI 반응을 보여주지 않음 -> 나꼬가 자주 씀
+- `Presable`: TouchableWithoutFeedback와 비슷하지만, 더 많은 속성을 줄 수 있음(OnLongPress, delayLongPress, hitSlope 등)
+- OnPress, OnPressIn, OnPressOut, ...
+
+### TextInput
+
+- React Native에는 textarea가 없고 오직 text input만 있다.
+- `TextInput`: 아주 많은 props가 존재
+- onChangeText, keyboardType, multiline
+
+- state, component, props를 쓰는 아이디어는 VR을 만드는 데에 사용되었으며, 이는 React의 아이디어에서 가져온 것이다.
+
+#### Props Drilling
+
+- 자체적으로 컴포넌트를 나누어 구현하다 props drilling 발생
+- 이를 해결하기 위해 상태 관리 라이브러리 도입 대신 Context API 사용
+  - 소규모 어플리케이션이기도 하고, 구현이 우선인 프로젝트
+
+### To Dos
+
+- 객체를 합치는 방법에는 `Object.assign()`과 `Spread 연산자`가 있다.
+
+## 2024-11-22
+
+### Paint To Dos
