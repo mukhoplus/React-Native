@@ -190,3 +190,16 @@
 ## 2024-11-22
 
 ### Paint To Dos
+
+- 우선 띄워.
+
+### Persist
+
+- `AsyncStorage`: 모바일 디바이스의 localStorage
+  `expo install @react-native-async-storage/async-storage`
+
+### Delete
+
+- 이것도 일단 나눠.
+
+### Publishing Out Apps

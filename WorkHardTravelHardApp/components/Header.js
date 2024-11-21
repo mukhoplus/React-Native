@@ -12,8 +12,8 @@ const Header = () => {
 
   return (
     <View style={styles.header}>
-      <Button text={"Work"} func={work} />
-      <Button text={"Travel"} func={travel} />
+      <Button text={"할 일"} func={work} />
+      <Button text={"여행"} func={travel} />
     </View>
   );
 };

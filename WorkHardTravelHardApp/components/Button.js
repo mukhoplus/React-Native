@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Text, TouchableOpacity } from "react-native";
 import { WorkingContext } from "../context/WorkingContext";
-import styles from "../styles/ButtonStyles";
 import { theme } from "../colors";
+import styles from "../styles/ButtonStyles";
 
 const Button = ({ text, func }) => {
   const { working } = useContext(WorkingContext);
@@ -13,7 +13,7 @@ const Button = ({ text, func }) => {
         style={{
           ...styles.btnText,
           color:
-            (text === "Work" && working) || (text === "Travel" && !working)
+            (text === "할 일" && working) || (text === "여행" && !working)
               ? "white"
               : theme.grey,
         }}
