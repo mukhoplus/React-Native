@@ -18,3 +18,16 @@ export const getDeletedToDos = async (key) => {
   delete deletedToDos[key];
   return { ...deletedToDos };
 };
+
+export const updateToDos = async (key, toDo) => {
+  const savedToDos = await getSavedToDos();
+  const newToDos = Object.entries(savedToDos).reduce((acc, [k, v]) => {
+    if (k === key) {
+      const newSubObject = { [k]: { ...toDo } };
+      return { ...acc, ...newSubObject };
+    }
+    return { ...acc, [k]: v };
+  }, {});
+  await saveToDos({ ...newToDos }); // 저장소 업데이트
+  return { ...newToDos };
+};

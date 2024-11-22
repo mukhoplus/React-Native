@@ -1,12 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { View, Text, TouchableOpacity, Alert } from "react-native";
+import { CheckBox } from "react-native-elements";
 import { Fontisto } from "@expo/vector-icons";
 import { WorkingContext } from "../context/WorkingContext";
-import { saveToDos, getDeletedToDos } from "../asyncStorage";
+import { saveToDos, getDeletedToDos, updateToDos } from "../asyncStorage";
 import styles from "../styles/TodoStyles";
 
 const Todo = ({ objectKey, toDo }) => {
   const { setToDos } = useContext(WorkingContext);
+  const [isChecking, setIsChecking] = useState(toDo.checking);
 
   const deleteToDo = async (key) => {
     try {
@@ -24,9 +26,23 @@ const Todo = ({ objectKey, toDo }) => {
     } catch (e) {}
   };
 
+  const checkToDo = async (key, toDo) => {
+    const newToDo = { ...toDo, checking: !isChecking };
+    setIsChecking(!isChecking);
+
+    const newToDos = await updateToDos(key, { ...newToDo });
+    setToDos({ ...newToDos });
+  };
+
   return (
     <View style={styles.todo}>
-      <Text style={styles.text}>{toDo.text}</Text>
+      <View style={styles.data}>
+        <CheckBox
+          checked={isChecking}
+          onPress={() => checkToDo(objectKey, toDo)}
+        />
+        <Text style={styles.text}>{toDo.text}</Text>
+      </View>
       <TouchableOpacity onPress={() => deleteToDo(objectKey)}>
         <Fontisto name="trash" size={16} color="white" />
       </TouchableOpacity>

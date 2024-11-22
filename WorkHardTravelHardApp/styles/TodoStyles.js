@@ -13,10 +13,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
   },
+  data: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginLeft: -20,
+  },
   text: {
     color: "white",
     fontSize: 16,
     fontWeight: "500",
+    marginBottom: 5,
   },
 });
 

@@ -14,7 +14,7 @@ const Input = () => {
     const regex = /^\s*$/; // 빈 문자, 공백, 개행문자만 있는지 확인하는 정규 표현식
     if (regex.test(text)) return;
 
-    const toDo = { [Date.now()]: { working, text } };
+    const toDo = { [Date.now()]: { working, text, checking: false } };
     const newToDos = { ...toDos, ...toDo };
 
     // 저장

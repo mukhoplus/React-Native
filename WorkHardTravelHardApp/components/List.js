@@ -23,14 +23,9 @@ const List = () => {
 
   return (
     <ScrollView>
-      {Object.keys(toDos).map((key) =>
-        toDos[key].working === working ? (
-          <Todo
-            style={styles.todo}
-            key={key}
-            objectKey={key}
-            toDo={toDos[key]}
-          />
+      {Object.entries(toDos).map(([key, toDo]) =>
+        toDo.working === working ? (
+          <Todo style={styles.todo} key={key} objectKey={key} toDo={toDo} />
         ) : null
       )}
     </ScrollView>
