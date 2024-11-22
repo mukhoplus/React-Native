@@ -27,9 +27,11 @@ const Todo = ({ objectKey, toDo }) => {
   };
 
   const checkToDo = async (key, toDo) => {
+    // ToDo 컴포넌트 수정
     const newToDo = { ...toDo, checking: !isChecking };
     setIsChecking(!isChecking);
 
+    // 저장소 및 로컬 저장소 업데이트
     const newToDos = await updateToDos(key, { ...newToDo });
     setToDos({ ...newToDos });
   };
@@ -41,7 +43,14 @@ const Todo = ({ objectKey, toDo }) => {
           checked={isChecking}
           onPress={() => checkToDo(objectKey, toDo)}
         />
-        <Text style={styles.text}>{toDo.text}</Text>
+        <Text
+          style={[
+            styles.text,
+            isChecking && { textDecorationLine: "line-through" },
+          ]}
+        >
+          {toDo.text}
+        </Text>
       </View>
       <TouchableOpacity onPress={() => deleteToDo(objectKey)}>
         <Fontisto name="trash" size={16} color="white" />
