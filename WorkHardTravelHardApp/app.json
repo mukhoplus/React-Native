@@ -13,16 +13,23 @@
       "backgroundColor": "#9370db"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "WorkHardTravelHardApp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#9370db"
-      }
+      },
+      "package": "com.mukho_io.WorkHardTravelHardApp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9ec9e0cd-6d17-41b4-a58b-ea9dc775035c"
+      }
     }
   }
 }
